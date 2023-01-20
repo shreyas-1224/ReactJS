@@ -1,0 +1,44 @@
+Map Function : 
+
+suppose there is an array contacts of javascript objects. 
+map expects function as an argument. 
+_________________________________________________________________________________
+
+ex: 
+
+function createCard(contact){       // single javascript object from array.
+    return (<Card 
+        name = contact.name
+    />);
+}
+
+contacts.map(createCard);
+
+________________________________________________________________________________________
+
+Filer : Create a new array by keeping the items that returns true.
+ex : 
+
+const numbers = [1,2,3,4,5,6,7]
+
+function filterArray(item){
+    return item%2 ;
+}
+const newArray = numbers.filter(filterArray);  ==> will have only odd numbers.
+
+________________________________________________________________________________________
+
+Reduce: accumulate a new number by taking each number from old array.
+        accumulate(gather and give a single number.)
+
+const numbers = [1,2,3,4,5];
+
+function accumulate(newNumber , item){      // item is number from old array.
+    return newNumber += item;
+}
+
+let value = 0;
+value = numbers.reduce(accumulate);
+console.log(value);     ==> will return 15. 1+2+3+4+5.
+
+

@@ -1,0 +1,30 @@
+1 . css might not apply . do this in index.html
+==> <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
+_________________________________________________________________________
+
+2 .Element type is invalid: expected a string (for built-in components) 
+    or a class/function (for composite components) but got: undefined
+==> check if you have correctly imported or exported the functions. Most error are because
+    of not using default in the export. 
+__________________________________________________________________________
+
+3. Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. 
+==> instead of 
+    import ReactDOM from 'react-dom';
+    ReactDOM.render(<>...<>  , document.getElementById("root"));
+
+    use,
+    import ReactDOM from 'react-dom/client';
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+        <>...</>
+    );
+____________________________________________________________________________
+
+3. react-jsx-dev-runtime.development.js:117 
+   Warning: Each child in a list should have a unique "key" prop.
+==> to render efficiently, eact component should have its own unique key. add key to component and 
+    this key will go away.
+____________________________________________________________________________
+
+4.
