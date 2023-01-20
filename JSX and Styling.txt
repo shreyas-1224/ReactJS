@@ -1,0 +1,6 @@
+ReactJS => Js library for making interface (frontend); code less create more.
+	     can update only specific component.
+	  => compares new version of dom tree with old and detect the differance.
+
+_________________________________________________________________________________
+

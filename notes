@@ -1,0 +1,2 @@
+css might not apply . do this in index.html
+= <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
