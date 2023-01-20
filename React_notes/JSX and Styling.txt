@@ -4,3 +4,46 @@ ReactJS => Js library for making interface (frontend); code less create more.
 
 _________________________________________________________________________________
 
+JSX vs JavaScript:
+JSX is a syntax extension for JavaScript, often used with React, which allows you to write HTML-like elements in your JavaScript code. 
+It is used to describe the structure of UI components in a way that is easy for developers to understand. 
+In other words, JSX is a way to write components in JavaScript that look like HTML.
+_________________________________________________________________________________
+
+Props : props are basically properties of JSX elements. for example :
+
+function Card(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <img src={props.src} alt="avatar_img" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+    <Card
+      name="Beyonce"
+      src="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      tel="+123 456 789"
+      email="b@beyonce.com"
+    />
+
+    <Card
+      name="Chuck Norris"
+      src="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png"
+      tel="+123 456 789"
+      email="originalChuckNorris.com"
+    />
+	
+  </div>,
+  document.getElementById("root")
+);
+
+its like using a template and them replacing the variables at the time of usage. 
+________________________________________________________________________________________
+
