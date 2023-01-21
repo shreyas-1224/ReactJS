@@ -1,13 +1,14 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Note from "./Note";
+import createNote from "./Note";
 import Card from "./Card";
+import notes from "../notes";
 
 function App(){
     return (
         <div>
             <Header />
-            <Note />
+            {notes.map(createNote)}
             <Footer />
         </div>
     );
