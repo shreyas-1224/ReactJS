@@ -1,0 +1,94 @@
+Why Hooks : 
+
+hooks as a way of being able to make our website interactive and actually have changeable state.
+
+sometimes, changing value of a boolean or variable will not change the existing UI and it has already
+been rendering and to change the state, we need to reRender everything. For this purpose,we use React Hooks.
+
+UI = f(x) , there are functions that allow us to hook into the state of app and read or
+modify it. 
+
+__________________________________________________________________________________________
+
+useState hooks:
+1. you must use hooks inside a functional component.
+
+import React, { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  function increament() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div className="container">
+      <h1>{count}</h1>
+      <button onClick={increament}>+</button>
+    </div>
+  );
+}
+
+export default App;
+
+==>  First when my app loads up I call you state and I give it
+
+an initial value.
+
+This value gets stored inside this variable count and it gets rendered inside our h1.
+Now when the user presses on this button and the onClick gets triggered, 
+the increase function is activated. And this increase function is going to call set count 
+which is going to update the state of my count
+
+[count , setCount] = useState(0);
+count sets to the value passed in useState function. It is called as initial value.
+second argument is a function. we have destructured the array here and named that function as 
+setCount.
+
+// you should know that inside the function from useState() (2nd destructured), there is an updated
+   value for the first destructured element.
+
+Challenge:
+1. Given that you can get the current time using:
+
+Show the latest time in the <h1> when the Get Time button
+is pressed.
+
+2. Given that you can get code to be called every second
+using the setInterval method.
+Can you get the time in your <h1> to update every second?
+
+e.g. code below prints hey every second.
+ function sayHi() {
+   console.log("Hey");
+ }
+ setInterval(sayHi, 1000);
+
+
+===> 
+import React, { useState } from "react";
+
+function App() {
+  const now = new Date().toLocaleTimeString("en-US", { hour12: false });
+
+  var [time, showTime] = useState(now);
+
+  function getTime() {
+    const newTime = new Date().toLocaleTimeString("en-US", { hour12: false });
+    showTime(newTime);
+  }
+  setInterval(getTime, 1000);
+
+  return (
+    <div className="container">
+      <h1>{time}</h1>
+      <button onClick={getTime}>Get Time</button>
+    </div>
+  );
+}
+
+to summarise state changing in react , 
+first we have to create an initial value and pass it on to useState(initialValue);
+then we need to write a function for events such as onClick. in that function, we need
+to call the function from useState().and give new state value as parameter.

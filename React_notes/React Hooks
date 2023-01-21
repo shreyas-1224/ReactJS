@@ -1,9 +1,0 @@
-Why Hooks : 
-
-sometimes, changing value of a boolean or variable will not change the existing UI and it has already
-been rendering and to change the state, we need to reRender everything. For this purpose,we use React Hooks.
-
-UI = f(x) , there are functions that allow us to hook into the state of app and read or
-modify it. 
-
-_________________________________________________________________________________________
