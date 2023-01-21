@@ -1,0 +1,31 @@
+ternary operator : 
+
+const value = (condition) ? {expression if its true} : {expression if its false};
+
+&& operator : a && b : true if both are true. and if even a is false, javascript engine will    
+              not even check for b. this is useful in lot of cases.
+    
+    can you guess the output for true and false in userIsRegistered?
+
+    {!props.userIsRegistered && (
+        <Input type="Register" placeholder="Confirm password" />
+    )}
+    <Button
+        type="submit"
+        buttonType={props.userIsRegistered ? "Login" : "Register"}
+    />
+              
+
+________________________________________________________________________________________
+
+another frquently used usecase of ternary operator is changing the state. 
+    state = f(x); // haha..now we got maths in js.
+
+Q. apply style when value is true. else false. 
+
+value = true;
+const style = {textDecoration = "line-through"}
+
+<Input type = "text" style={value ? style : null}>
+
+________________________________________________________________________________________
