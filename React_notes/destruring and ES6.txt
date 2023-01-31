@@ -1,0 +1,31 @@
+* Destruring in ES6: 
+
+const names = ["Shreyas" , "Priya" , "Tejas"];
+
+const [name_1 , name_2 , name_3] = names;	then , 
+name_1 = "Shreyas"
+name_2 = "Priya"
+name_3 = "Tejas"				// array destruring allows you to name anything to variables. (name_1 , name_2 , ...)
+
+
+* But, in object destruring , You have to use the same key name as in the object. for ex:
+
+names = {
+	firstName = "Shreyas",
+	salary = 1600000		    // to destructure,
+}					    // const [fname , sal] = names;			wont work and give undefined for fname and sal.	
+
+right way is, const {firstName , salary} = names; 	
+
+another way to use own names is to declare it like, const{ firstName : fname , Salary : sal} = names;
+now , fname = "shreyas" and salary = 1600000.
+
+
+* Provide default values: 
+  const names = {
+	fname = "shreyas",
+	salary = 1600000
+  }
+
+  const {fname , middlename = "Pradeep" , salary} = names;		// middlename will give pradeep unless already present. 
+

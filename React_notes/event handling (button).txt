@@ -1,0 +1,28 @@
+import React, { useState } from "react";
+
+export default function Button() {
+  const [currentState, changeState] = useState(false);
+  const colorStyle = {
+  };
+
+  const mouseEnter = () => {
+    changeState(true);
+  };
+
+  const mouseOut = () => {
+    changeState(false);
+  };
+
+  return (
+    <button 
+    onMouseOver={mouseEnter} 
+    onMouseOut={mouseOut} 
+    style = {{backgroundColor: currentState ? "black" : "white"}}
+    >
+    
+      submit
+    </button>
+  );
+}
+
+output : submit button turns black on getting mouse on it and back to default when out.
